@@ -6,6 +6,15 @@
  * @param  { Number } b
  * @return { Number }
  */
+ function greaterNumber(a,b){
+  if(a>b){
+    return a;
+  }
+  else{
+    return b;
+  }
+ }
+ greaterNumber();
 
 
 /**
@@ -17,8 +26,13 @@
  * @param  { Number } n
  * @return { String }
  */
-
-
+ function stringOfNumbers(n){
+  var phrase="";
+  for (var i = 0; i < n; i++) {
+    phrase+=i;
+  }
+  return phrase;
+}
 /**
  * Create a function called 'sumOfArray'.
  * This function will take in a parameter that is an array.
@@ -27,7 +41,15 @@
  * @param  { array } arr
  * @return { Number }
  */
-
+function sumOfArray(arr){
+  var sum = 0;
+  arr.forEach(function(x){
+    if(Number.isInteger(x)){
+      sum+=x;
+    }
+  });
+  return sum;
+}
 
 /**
  * Create a function called 'getEvens'.
@@ -36,7 +58,15 @@
  * @param  { array } arr
  * @return { array }
  */
-
+function getEvens(arr){
+  var evens = [];
+  arr.forEach(function(x){
+    if(Math.floor(x/2)==x/2){
+      evens.push(x);
+    }
+  }); 
+  return evens;
+}
 
 /**
  * Create a function called 'getOdds'.
@@ -45,7 +75,15 @@
  * @param  { array } arr
  * @return { array }
  */
-
+function getOdds(arr){
+  var odds = [];
+  arr.forEach(function(x){
+    if(Math.floor(x/2)!==x/2){
+      odds.push(x);
+    }
+  }); 
+  return odds;
+}
 
 /**
  * Create a function called 'calculate'.
@@ -61,3 +99,20 @@
  * @param  { String } operator ('add', subtract, 'multiply', 'divide')
  * @return { Number/String }
  */
+function calculate(int1,int2,operator){
+  if(operator=="add"){
+    return int1+int2;
+  }
+  else if(operator=="subtract"){
+    return int1-int2;
+  }
+  else if(operator=="multiply"){
+    return int1*int2;
+  }
+  else if(operator=="divide"){
+    return int1/int2;
+  }
+  else{
+    return 'Invalid operator';
+  }
+}
